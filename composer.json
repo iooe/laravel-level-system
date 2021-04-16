@@ -1,0 +1,29 @@
+{
+  "name": "tizis/laravel-level-system",
+  "description": "",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roman Yepanchenko",
+      "homepage": "https://github.com/tizis"
+    }
+  ],
+  "require": {
+    "php": "^7.1|^8.0",
+    "illuminate/support": "^8.0",
+    "illuminate/database": "^8.0",
+    "illuminate/http": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "tizis\\LevelSystem\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "tizis\\LevelSystem\\Providers\\ServiceProvider"
+      ]
+    }
+  }
+}
