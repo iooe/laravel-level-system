@@ -3,7 +3,7 @@
 #Install
 
 
-composer require tizis/level-system
+composer require tizis/laravel-level-system
 
 ##Publish Migrations & migrate 
 
