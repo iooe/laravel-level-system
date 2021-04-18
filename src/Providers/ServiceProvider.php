@@ -9,16 +9,12 @@ class ServiceProvider extends LaravelServiceProvider
 {
     public function boot()
     {
-        $this->app->bind(
-            ICommentable::class
-        );
-
         $this->publishes([
             __DIR__ . '/../../config/user-levels.php' => config_path('user-levels.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../../database/migrations' => database_path('/migrations'),
+            __DIR__ . '/../../database/migrations' => database_path('/migrations'),
         ], 'migrations');
 
 
