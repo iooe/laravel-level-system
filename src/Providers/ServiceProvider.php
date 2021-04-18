@@ -3,7 +3,6 @@
 namespace tizis\LevelSystem\Providers;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use tizis\laraComments\Contracts\ICommentable;
 
 class ServiceProvider extends LaravelServiceProvider
 {
