@@ -48,12 +48,17 @@ class LevelService
 
             $requiredExperience = $this->levels[$newLevel];
 
-            if ($experience <= $requiredExperience) {
+            if ($experience === $requiredExperience) {
+                $experienceRemainder = 0;
+                break;
+            }
+
+            if ($experience < $requiredExperience) {
                 $experienceRemainder = $experience;
                 $newLevel--;
                 break;
             }
-
+            
             $experience = $experience - $requiredExperience;
 
             if ($newLevel + 1 > $maxLevel) {
