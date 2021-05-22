@@ -35,7 +35,7 @@ class LevelService
         $this->updateAttributes($resultOfCalculation['level'], $resultOfCalculation['experience_remainder']);
 
         if ($oldLevel !== $resultOfCalculation['level']) {
-            $this->emitEvent();
+            $this->emitEvent($oldLevel);
         }
     }
 
@@ -58,7 +58,7 @@ class LevelService
                 $newLevel--;
                 break;
             }
-            
+
             $experience = $experience - $requiredExperience;
 
             if ($newLevel + 1 > $maxLevel) {
@@ -80,8 +80,8 @@ class LevelService
         $this->user->save();
     }
 
-    private function emitEvent()
+    private function emitEvent($oldLevel)
     {
-        event(new LevelUp($this->user));
+        event(new LevelUp($oldLevel, $this->user));
     }
 }

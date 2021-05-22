@@ -12,9 +12,11 @@ class LevelUp
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public Model $user;
+    public int $oldLevel;
 
-    public function __construct(Model $user)
+    public function __construct(int $oldLevel, Model $user)
     {
         $this->user = $user;
+        $this->oldLevel = $oldLevel;
     }
 }
