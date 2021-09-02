@@ -43,5 +43,5 @@ return [
 ```php
 $user = User::where('id', 1)->first();
 $service = new LevelService($user);  
-$service->addProgress(500); // now user have 2 level and 200 experience (500 - 100 - 200)
+$service->addProgress(500); // now user has 2nd level and 200 points of experience (500 - 100 - 200)
 ``` 
