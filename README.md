@@ -1,26 +1,19 @@
-#Readme coming soon
+## Install
 
-#Install
+`composer require tizis/laravel-level-system`
 
+### Publish Migrations & migrate 
 
-composer require tizis/laravel-level-system
-
-##Publish Migrations & migrate 
-
-
+```php
 php artisan vendor:publish --provider="tizis\LevelSystem\Providers\ServiceProvider" --tag=migrations
 php artisan migrate
+```
 
+### Publish Config & configure 
 
-##Publish Config & configure 
+`php artisan vendor:publish --provider="tizis\LevelSystem\Providers\ServiceProvider" --tag=config`
 
-
-php artisan vendor:publish --provider="tizis\LevelSystem\Providers\ServiceProvider" --tag=config 
-
-
-
-#Models
-
+### Example
 
 ```php
 use tizis\achievements\Contracts\Achievementable as AchievementableContract;
@@ -31,12 +24,8 @@ class User extends Authenticatable implements AchievementableContract {
 }
 ```   
 
-
-#Examples
-
 ```php
-
-//config example
+/config/user-levels.php
 
 return [
     'levels' => [
@@ -48,17 +37,11 @@ return [
         ...
     ]
 ];
-
-      
 ``` 
 
 
-
 ```php
-
-  		$user = User::where('id', 1)->first();
-      $service = new LevelService($user);  
-      $service->addProgress(500); // now user have 2 level and 200 experience (500 - 100 - 200)
-
-      
+$user = User::where('id', 1)->first();
+$service = new LevelService($user);  
+$service->addProgress(500); // now user have 2 level and 200 experience (500 - 100 - 200)
 ``` 
