@@ -16,15 +16,6 @@ php artisan migrate
 ### Example
 
 ```php
-use tizis\achievements\Contracts\Achievementable as AchievementableContract;
-use tizis\achievements\Traits\Achievementable;
-
-class User extends Authenticatable implements AchievementableContract {
-	use Achievementable;
-}
-```   
-
-```php
 /config/user-levels.php
 
 return [
