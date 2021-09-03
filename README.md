@@ -6,7 +6,7 @@
 
 ```php
 php artisan vendor:publish --provider="tizis\LevelSystem\Providers\ServiceProvider" --tag=migrations
-php artisan migrate //adding level &  columns into 'users' table
+php artisan migrate //adding level & experience columns into 'users' table
 ```
 
 ### Publish Config & configure 
